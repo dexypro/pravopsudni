@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="sr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Владан Петров</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+      }
+      .main-header {
+        width: 100%;
+        background-color: #007bff;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+      }
+      .main-header a {
+        color: white;
+        text-decoration: none;
+      }
+      .main-title {
+        margin: 0;
+        font-size: 24px;
+      }
+      .container {
+        display: block;
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      .download-button, .generate-button {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .download-button:hover, .generate-button:hover {
+        background-color: #0056b3;
+      }
+      .exam-card {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+      }
+      .tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      .tablink {
+        padding: 10px;
+        cursor: pointer;
+        background-color: #f1f1f1;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 0 5px;
+      }
+      .tablink.active {
+        background-color: #007bff;
+        color: white;
+      }
+      .tabcontent {
+        display: none;
+      }
+      .tabcontent.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-header">
+      <a href="../index.html" class="main-title-link">
+        <div class="main-title">Правосудни испит</div>
+      </a>
+    </header>
+    <div class="container">
+      <div class="professor-page">
+        <img
+          src="../slike/vladan-petrov.jpeg"
+          alt="Владан Петров"
+          class="professor-image"
+        />
+        <h1>Владан Петров</h1>
+        <h2>Професор и судија</h2>
+        <div class="tabs">
+          <button class="tablink active" onclick="openTab(event, 'info')">
+            Информације
+          </button>
+          <button class="tablink" onclick="openTab(event, 'questions')">
+            Питања
+          </button>
+          <button class="tablink" onclick="openTab(event, 'materials')">
+            Материјали
+          </button>
+        </div>
+
+        <div id="info" class="tabcontent active">
+          <h3>Корисне информације</h3>
+          <p>
+            Испитивач Петров не захтева од кандидата да знају сваки детаљ из
+            његовог приручника, иако је он аутор истог. Кључни фокус треба бити
+            на основним и суштинским концептима.
+          </p>
+        </div>
+
+        <div id="questions" class="tabcontent">
+          <h3>Питања</h3>
+          <a href="../content/prviOdbor/Уставно право и правосудно организационо право.pdf" class="download-button" download>
+            Преузми PDF
+          </a>
+          <button class="generate-button" onclick="generateExamCard()">
+            Генериши испитну картицу
+          </button>
+          <div id="exam-card" class="exam-card" style="display: none;">
+            <h3>Испитна картица</h3>
+            <p id="first-question"></p>
+            <p id="second-question"></p>
+            <p id="third-question"></p>
+          </div>
+          <h4>Прво питање</h4>
+          <ul id="first-part">
+            <li>1. Извори уставног права</li>
+            <li>2. Појам устава</ли>
+            <li>3. Својства устава</ли>
+            <li>4. Садржина устава</ли>
+            <li>5. Поделе устава</ли>
+            <li>6. Промена Устава</ли>
+            <li>7. Структура устава</ли>
+            <li>8. Преамбула Устава</ли>
+            <li>9. Уставна дефиниција Србије</ли>
+            <li>10. Начело суверености грађана</ли>
+            <li>11. Владавина права</ли>
+            <li>12. Политички плурализам</ли>
+            <li>13. Забрана сукоба интереса</ли>
+            <li>14. Начело неповредивости територијалног интегритета</ли>
+            <li>15. Световност државе</ли>
+            <li>16. Начело територијалне децентрализације</ли>
+            <li>17. Однос међународног и унутрашњег права</ли>
+            <li>18. Уставна концепција људских и мањинских права и слобода</ли>
+            <li>19. Лична права</ли>
+            <li>20. Политичка права</ли>
+            <li>21. Економска, социјална и културна права</ли>
+            <li>22. Права припадника националних мањина</ли>
+            <li>23. Остваривање и заштита људских и мањинских права и слобода</ли>
+            <li>24. Заштитник грађана</ли>
+            <li>25. Економско уређење и јавне финансије</ли>
+          </ul>
+          <h4>Друго питање</h4>
+          <ul id="second-part">
+            <li>26. Народна иницијатива и референдум</ли>
+            <li>27. Законодавна функција Народне скупштине</ли>
+            <li>28. Контролна функција Народне скупштине</ли>
+            <li>29. Изборна функција Народне скупштине и квазисудска функција Народне скупштине</ли>
+            <li>30. Ратно и ванредно стање</ли>
+            <li>31. Трајање мандата и распуштање Народне скупштине</ли>
+            <li>32. Радна тела Народне скупштине и функционери Народне скупштине</ли>
+            <li>33. Превремени престанак мандата народног посланика и природа посланичког мандата</ли>
+            <li>34. Посланички имунитет и инкомпатибилитет</ли>
+            <li>35. Изборни систем и заштита изборног права</ли>
+            <li>36. Избор и мандат председника Републике</ли>
+            <li>37. Овлашћења и акти председника Републике</ли>
+            <li>38. Разрешење председника Републике</ли>
+            <li>39. Избор и састав Владе</ли>
+            <li>40. Овлашћења и акти Владе</ли>
+            <li>41. Одговорност Владе и министарска одговорност</ли>
+            <li>42. Државна управа</ли>
+            <li>43. Избор и састав Уставног суда</ли>
+            <li>44. Надлежности Уставног суда</ли>
+            <li>45. Оцена уставности и законитости</ли>
+            <li>46. Уставна жалба и жалба Уставном суду</ли>
+            <li>47. Дејство одлука Уставног суда</ли>
+            <li>48. Јединице локалне самоуправе, надлежности и финансирање локалне самоуправе</ли>
+            <li>49. Органи локалне самоуправе, непосредно учешће грађана у обављању послова локалне самоуправе, надзор над локалном самоуправом и заштита локалне самоуправе</ли>
+            <li>50. Покрајинска аутономија</ли>
+          </ul>
+          <h4>Треће питање</h4>
+          <ul id="third-part">
+            <li>51. Уставна начела судства</ли>
+            <li>52. Независност судства</ли>
+            <li>53. Сталност судијске функције</ли>
+            <li>54. Јавност суђења</ли>
+            <li>55. Обавезност судских одлука</ли>
+            <li>56. Судијски имунитет и судијски инкомпатибилитет</ли>
+            <li>57. Врсте судова</ли>
+            <li>58. Надлежност судова</ли>
+            <li>59. Надлежност Врховног суда</ли>
+            <li>60. Избор судије и судије поротника</ли>
+            <li>61. Престанак судијске функције</ли>
+            <li>62. Дисциплинска одговорност судије</ли>
+            <li>63. Високи савет судства</ли>
+            <li>64. Избор председника суда и престанак функције председника суда</ли>
+            <li>65. Судско одељење и седница свих судија</ли>
+            <li>66. Општа седница Врховног суда</ли>
+            <li>67. Судска управа</ли>
+            <li>68. Судско особље</ли>
+            <li>69. Правосудна управа</ли>
+            <li>70. Правосудна академија</ли>
+            <li>71. Основна обележја положаја и организације јавног тужилаштва</ли>
+            <ли>72. Избор носиоца јавнотужилачке функције и престанак јавнотужилачке функције</ли>
+            <li>73. Високи савет тужилаштва</ли>
+            <li>74. Адвокатура</ли>
+            <li>75. Правобранилаштво и јавно бележништво</ли>
+          </ul>
+        </div>
+
+        <div id="materials" class="tabcontent">
+          <h3>Материјали</h3>
+          <p>Књиге, скрипте, презентације и други корисни материјали.</p>
+          <a href="../content/prviOdbor/Уставно Владан Петров - нова скрипта.docx" class="download-button" download>
+            Преузми скрипту
+          </a>
+        </div>
+      </div>
+    </div>
+    <footer class="main-footer">
+      <div>Copyright © <span id="currentYear"></span></div>
+    </footer>
+    <script>
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
+      function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        if (evt) {
+          evt.currentTarget.className += " active";
+        }
+      }
+
+      function getRandomQuestion(questions) {
+        const randomIndex = Math.floor(Math.random() * questions.length);
+        return questions[randomIndex].textContent;
+      }
+
+      function generateExamCard() {
+        const firstPartQuestions = document.querySelectorAll("#first-part li");
+        const secondPartQuestions = document.querySelectorAll("#second-part li");
+        const thirdPartQuestions = document.querySelectorAll("#third-part li");
+
+        const firstQuestion = getRandomQuestion(firstPartQuestions);
+        const secondQuestion = getRandomQuestion(secondPartQuestions);
+        const thirdQuestion = getRandomQuestion(thirdPartQuestions);
+
+        document.getElementById("first-question").textContent = firstQuestion;
+        document.getElementById("second-question").textContent = secondQuestion;
+        document.getElementById("third-question").textContent = thirdQuestion;
+
+        document.getElementById("exam-card").style.display = "block";
+      }
+
+      // Set default tab
+      document.addEventListener("DOMContentLoaded", function () {
+        openTab(null, 'questions');
+      });
+    </script>
+  </body>
+</html>
